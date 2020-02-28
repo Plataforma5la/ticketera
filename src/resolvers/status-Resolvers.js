@@ -140,7 +140,20 @@ const setStatus = function(req, res, next) {
           })
             .then(comment => {
               if (comment) {
-                return comment.destroy();
+                return comment
+                  .update({
+                    description: req.body.description
+                  })
+                  .then(() => comment.setReplier(req.user.id))
+
+                  .then(() => ticket.setStatus(STATUS.OPEN))
+                  .then(() =>
+                    Ticket.findOne({
+                      where: { id: req.params.id },
+                      include: fullTicket
+                    })
+                  )
+                  .then(ticketUpdated => res.send(ticketUpdated));
               }
             })
             .then(() => ticket.setStatus(STATUS.OPEN))

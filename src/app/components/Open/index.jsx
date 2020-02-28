@@ -48,9 +48,6 @@ export default function Open({ ticket, index, params }) {
   };
 
   const date = moment(ticket.createdAt).calendar();
-  {
-    console.log(ticket);
-  }
   return (
     <Ticket isHighlighted={isHighlighted(ticket)}>
       {ticket.author && (

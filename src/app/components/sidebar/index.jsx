@@ -20,7 +20,6 @@ export default function SidebarComponent() {
   const [icon, setIcon] = React.useState("dashboard");
   const status = user.isAdmin ? "processing" : "pending";
 
-  useEffect(() => console.log(icon), [icon]);
 
   return (
     <Container>

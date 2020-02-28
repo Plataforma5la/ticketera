@@ -95,6 +95,7 @@ export default function AnswerTicketContainer({ ticket, setShowAnswerModal }) {
               setInputComp(false),
               setInputRechazado(false);
               setErrorMsg("");
+              setDescription("")
             }} 
           >
             PENDIENTE

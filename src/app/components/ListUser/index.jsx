@@ -11,7 +11,6 @@ import {
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 
 export default function ListUser({ user, handleClick, img }) {
-  console.log(user)
   return (
     <Container>
       <Question>
