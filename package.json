@@ -38,6 +38,7 @@
     "react-dropzone": "^10.2.1",
     "react-hot-loader-loader": "0.0.7",
     "react-icons": "^3.8.0",
+    "react-onclickoutside": "^6.9.0",
     "react-redux": "^7.1.3",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
