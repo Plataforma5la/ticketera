@@ -8,16 +8,15 @@ import {
   Rectangle,
   NavbarContainer,
   Search,
-  NotificationIcon,
   ProfileImg,
   NotificacionDiv,
-  NotificationBell,
   SearchIcon,
   UserName,
   ButtonLogOut,
   ProfileContainer
 } from "./style";
 import { fetchSearchedTickets } from "../../redux/actions/search";
+import NotificationBell from "./NotificationBell";
 // import { logOutUser } from "../../redux/actions/user";
 // import { Notification } from "../../components/Notifications/style";
 
@@ -69,7 +68,7 @@ export const Navbar = props => {
     );
     setInput("");
   };
-
+  NotificacionDiv.onOu;
   return (
     <NavbarContainer>
       <form onSubmit={handleSubmit}>
@@ -83,24 +82,13 @@ export const Navbar = props => {
         </Rectangle>
       </form>
       <FancyDiv>
-        <NotificacionDiv>
-          <NotificationBell
-            onClick={() => {
-              !notification ? setNotification(true) : setNotification(false);
-              setshowNotifications(false);
-            }}
-            src="/images/notificationbell.png"
-          />
-
-          {notifications.length && showNotifications ? (
-            <NotificationIcon>{notifications.length} </NotificationIcon>
-          ) : (
-            ""
-          )}
-          {notification ? (
-            <NotificationModal notifications={notifications} />
-          ) : null}
-        </NotificacionDiv>
+        <NotificationBell
+          notification={notification}
+          notifications={notifications}
+          setNotification={setNotification}
+          setshowNotifications={setshowNotifications}
+          showNotifications={showNotifications}
+        />
         <ProfileContainer onClick={() => handleClick()}>
           <ProfileImg src={user.img} />
 
